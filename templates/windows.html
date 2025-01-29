@@ -1,0 +1,25 @@
+{{ define "window" }}
+<h1>Add Window Details</h1>
+<form action="/windows" method="POST">
+    <input type="hidden" name="city" value="{{ .city }}">
+    <input type="hidden" name="site" value="{{ .site }}">
+    <input type="hidden" name="building" value="{{ .building }}">
+    <input type="hidden" name="num_windows" value="{{ .numWindows }}">
+    
+    {{ range $i := seq .numWindows }}
+    <div class="window-group">
+        <h3>Window {{ $i }}</h3>
+        <div>
+            <label>Height (inches):</label>
+            <input type="number" name="heights[]" required>
+        </div>
+        <div>
+            <label>Width (inches):</label>
+            <input type="number" name="widths[]" required>
+        </div>
+    </div>
+    {{ end }}
+    
+    <button type="submit">Save All Windows</button>
+</form>
+{{ end }}

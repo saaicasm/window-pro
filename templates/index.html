@@ -1,0 +1,22 @@
+{{ define "building" }}
+<h1>Add New Building</h1>
+<form action="/building" method="POST">
+    <div>
+        <label>City:</label>
+        <input type="text" name="city" required>
+    </div>
+    <div>
+        <label>Site:</label>
+        <input type="text" name="site" required>
+    </div>
+    <div>
+        <label>Building:</label>
+        <input type="text" name="building" required>
+    </div>
+    <div>
+        <label>Number of Windows:</label>
+        <input type="number" name="num_windows" min="1" required>
+    </div>
+    <button type="submit">Next</button>
+</form>
+{{ end }}
