@@ -1,29 +1,35 @@
-{{ define "summary" }}
-<h1>All Buildings</h1>
-<table>
-    <thead>
-        <tr>
-            <th>City</th>
-            <th>Site</th>
-            <th>Building</th>
-            <th>Windows</th>
-        </tr>
-    </thead>
-    <tbody>
-        {{ range .buildings }}
-        <tr>
-            <td>{{ .City }}</td>
-            <td>{{ .Site }}</td>
-            <td>{{ .Building }}</td>
-            <td>
-                <ul>
-                    {{ range .Windows }}
-                    <li>{{ .Height }}" x {{ .Width }}"</li>
-                    {{ end }}
-                </ul>
-            </td>
-        </tr>
-        {{ end }}
-    </tbody>
-</table>
+{{ block "base" . }}
+{{ end }}
+
+<div class="container mt-4">
+    <h1 class="text-center">All Buildings</h1>
+    <table class="table table-striped mt-4">
+        <thead class="thead-light">
+            <tr>
+                <th>City</th>
+                <th>Site</th>
+                <th>Building</th>
+                <th>Windows</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{ range .buildings }}
+            <tr>
+                <td>{{ .City }}</td>
+                <td>{{ .Site }}</td>
+                <td>{{ .Building }}</td>
+                <td>
+                    <ul class="list-unstyled">
+                        {{ range .Windows }}
+                        <li>{{ .Height }}" x {{ .Width }}"</li>
+                        {{ end }}
+                    </ul>
+                </td>
+            </tr>
+            {{ end }}
+        </tbody>
+    </table>
+</div>
+
+{{ block "footer" . }}
 {{ end }}

@@ -1,22 +1,29 @@
-{{ define "building" }}
-<h1>Add New Building</h1>
-<form action="/building" method="POST">
-    <div>
-        <label>City:</label>
-        <input type="text" name="city" required>
-    </div>
-    <div>
-        <label>Site:</label>
-        <input type="text" name="site" required>
-    </div>
-    <div>
-        <label>Building:</label>
-        <input type="text" name="building" required>
-    </div>
-    <div>
-        <label>Number of Windows:</label>
-        <input type="number" name="num_windows" min="1" required>
-    </div>
-    <button type="submit">Next</button>
-</form>
+{{ block "base" . }}
+{{ end }}
+
+<div class="container mt-4">
+    <h1 class="text-center">Add New Building</h1>
+    <form action="/building" method="POST" class="mt-4">
+        <div class="form-group">
+            <label for="city">City:</label>
+            <input type="text" class="form-control" id="city" name="city" required>
+        </div>
+        <div class="form-group">
+            <label for="site">Site:</label>
+            <input type="text" class="form-control" id="site" name="site" required>
+        </div>
+        <div class="form-group">
+            <label for="building">Building:</label>
+            <input type="text" class="form-control" id="building" name="building" required>
+        </div>
+        <div class="form-group">
+            <label for="num_windows">Number of Windows:</label>
+            <input type="number" class="form-control" id="num_windows" name="num_windows" min="1" required>
+        </div>
+        <button type="submit" class="btn btn-primary  m-10">Next</button>
+    </form>
+</div>
+
+
+{{ block "footer" . }}
 {{ end }}
